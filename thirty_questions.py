@@ -54,10 +54,28 @@
 # print(sorted(set(arr))[-2])
 
 
-arr = [2, 4, 5, 5, 7, 9, 12, 18, 90, 38, 64, 51, 83]
+# arr = [2, 4, 5, 5, 7, 9, 12, 18, 90, 38, 64, 51, 83]
 
-maxnum = sorted(set(arr))[-1]
+# maxnum = sorted(set(arr))[-1]
 
-minnum = sorted(set(arr))[0]
+# minnum = sorted(set(arr))[0]
 
-print(sorted(set(arr)), maxnum, minnum)
+# print(sorted(set(arr)), maxnum, minnum)
+
+
+n = int(input())
+score_list = []
+for _ in range(int(input())):
+    name = input()
+    score = float(input())
+    score_list.append([name, score])
+second_highest = sorted(set([score for name, score in score_list]))[1]
+print('\n'.join(
+    sorted([name for name, score in score_list if score == second_highest])))
+
+
+# score_list = []
+# for _ in range(int(input())):
+#     score = float(input())
+#     score_list.append(score)
+# print(score_list)
