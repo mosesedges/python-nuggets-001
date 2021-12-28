@@ -66,11 +66,10 @@
 n = int(input())
 score_list = []
 for _ in range(int(input())):
-    name = input()
-    score = float(input())
-    score_list.append([name, score])
-second_highest = sorted(set([score for name, score in score_list]))[1]
-print(second_highest)
+    score_list.append([input(), float(input())])
+second_highest = sorted(list(set([score for name, score in score_list])))[1]
+print('\n'.join([a for a, b in sorted(score_list) if b == second_highest]))
+
 # print('\n'.join(
 #     sorted([name for name, score in score_list if score == second_highest])))
 
