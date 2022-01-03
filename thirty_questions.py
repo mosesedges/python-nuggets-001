@@ -4,11 +4,10 @@
 # Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tip), and tax percent (the percentage of the meal price being added as tax) for a meal, find and print the meal's total cost. Round the result to the nearest integer.
 
 
-#  ****** SOLUTION *****
+#  ****** SOLUTION 2*****
 
 # meal_cost = float(input())
 # tip_percent, tax_percent = (int(input().strip()) for _ in range(2))
-
 # tip = meal_cost * tip_percent / 100
 # tax = meal_cost * tax_percent / 100
 # total = round(meal_cost + tip + tax)
@@ -24,7 +23,7 @@
 # If n is even and in the inclusive range of 6 to 20, print Weird
 # If n is even and greater than 20, print Not Weird
 
-# ****** SOLUTION ****
+# ****** SOLUTION 3 ****
 
 # def check(n) -> int:
 #     if n % 2 != 0:
@@ -38,6 +37,10 @@
 
 
 # check(42)
+
+# ************* EXTRA************
+
+# To get the second highest in a list without repetition of any array element
 
 # arr = [6, 2, 1, 4, 3, 5, 5, 2, 6, 6, 19]
 
@@ -54,6 +57,25 @@
 # print(sorted(set(arr))[-2])
 
 
+# n = int(input())
+# score_list = []
+# for _ in range(int(input())):
+#     score_list.append([input(), float(input())])
+# second_highest = sorted(list(set([score for name, score in score_list])))[1]
+# print('\n'.join([a for a, b in sorted(score_list) if b == second_highest]))
+
+
+# score_list = []
+# for _ in range(int(input())):
+#     score = float(input())
+#     score_list.append(score)
+# print(score_list)
+
+
+# *********EXTRA************
+
+# arr =[] print the list element without duplicate, the highest and lowest number in the list.
+
 # arr = [2, 4, 5, 5, 7, 9, 12, 18, 90, 38, 64, 51, 83]
 
 # maxnum = sorted(set(arr))[-1]
@@ -62,20 +84,44 @@
 
 # print(sorted(set(arr)), maxnum, minnum)
 
+# ****** QUESTION 5 *****
 
-n = int(input())
-score_list = []
-for _ in range(int(input())):
-    score_list.append([input(), float(input())])
-second_highest = sorted(list(set([score for name, score in score_list])))[1]
-print('\n'.join([a for a, b in sorted(score_list) if b == second_highest]))
+# Consider a list (list = []). You can perform the following commands:
 
-# print('\n'.join(
-#     sorted([name for name, score in score_list if score == second_highest])))
+# insert i e: Insert integer e at position i.
+# print: Print the list.
+# remove e: Delete the first occurrence of integer e.
+# append e: Insert integer e at the end of the list.
+# sort: Sort the list.
+# pop: Pop the last element from the list.
+# reverse: Reverse the list.
 
+# Initialize your list and read in the value of  followed by  lines of commands where each command will be of the 7 types listed above. Iterate through each command in order and perform the corresponding operation on your list.
 
-# score_list = []
-# for _ in range(int(input())):
-#     score = float(input())
-#     score_list.append(score)
-# print(score_list)
+# ****** SOLUTION 5 *****
+
+N = int(input())
+L = []
+for _ in range(N):
+    args = input().strip().split(" ")
+    if args[0] == "append":
+        L.append(int(args[1]))
+        print(L)
+    elif args[0] == "insert":
+        L.insert(int(args[1]), int(args[2]))
+    elif args[0] == "remove":
+        L.remove()
+    elif args[0] == "sort":
+        L.sort()
+    elif args[0] == "pop":
+        L.pop()
+    elif args[0] == "pop":
+        L.pop()
+    elif args[0] == "print":
+        print(L)
+
+        # ****** QUESTION 6 *****
+
+# Given an integer, n, and n space-separated integers as input, create a tuple, t, of those n integers. Then compute and print the result of hash(t).
+
+# Note: hash() is one of the functions in the __builtins__ module, so it need not be imported.
