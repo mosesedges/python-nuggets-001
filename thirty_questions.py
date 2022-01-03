@@ -100,28 +100,33 @@
 
 # ****** SOLUTION 5 *****
 
-N = int(input())
-L = []
-for _ in range(N):
-    args = input().strip().split(" ")
-    if args[0] == "append":
-        L.append(int(args[1]))
-        print(L)
-    elif args[0] == "insert":
-        L.insert(int(args[1]), int(args[2]))
-    elif args[0] == "remove":
-        L.remove()
-    elif args[0] == "sort":
-        L.sort()
-    elif args[0] == "pop":
-        L.pop()
-    elif args[0] == "pop":
-        L.pop()
-    elif args[0] == "print":
-        print(L)
+# N = int(input())
+# L = []
+# for _ in range(N):
+#     args = input().strip().split(" ")
+#     if args[0] == "append":
+#         L.append(int(args[1]))
+#         print(L)
+#     elif args[0] == "insert":
+#         L.insert(int(args[1]), int(args[2]))
+#     elif args[0] == "remove":
+#         L.remove()
+#     elif args[0] == "sort":
+#         L.sort()
+#     elif args[0] == "pop":
+#         L.pop()
+#     elif args[0] == "pop":
+#         L.pop()
+#     elif args[0] == "print":
+#         print(L)
 
-        # ****** QUESTION 6 *****
+# ****** QUESTION 6 *****
 
 # Given an integer, n, and n space-separated integers as input, create a tuple, t, of those n integers. Then compute and print the result of hash(t).
 
 # Note: hash() is one of the functions in the __builtins__ module, so it need not be imported.
+
+n = int(input())
+integer_list = map(int, input().split())
+t = tuple(integer_list)
+print(hash(t))
