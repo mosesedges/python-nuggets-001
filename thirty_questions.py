@@ -144,6 +144,7 @@
 def spilt_and_join(line) -> str:
     x = line.split(" ")
     x = '-'.join(x)
+    return x
     print(x)
 
 
