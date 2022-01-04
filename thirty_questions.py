@@ -126,7 +126,25 @@
 
 # Note: hash() is one of the functions in the __builtins__ module, so it need not be imported.
 
-n = int(input())
-integer_list = map(int, input().split())
-t = tuple(integer_list)
-print(hash(t))
+# n = int(input())
+# integer_list = map(int, input().split())
+# t = tuple(integer_list)
+# print(hash(t))
+
+
+# ****** QUESTION 7 *****
+# You are given a string. Split the string on a " " (space) delimiter and join using a - hyphen.
+# Function Description
+# Complete the split_and_join function in the editor below.
+# split_and_join has the following parameters:
+# string line: a string of space-separated words
+# Returns
+# string: the resulting string
+
+def spilt_and_join(line) -> str:
+    x = line.split(" ")
+    x = '-'.join(x)
+    print(x)
+
+
+spilt_and_join('this is a string')
