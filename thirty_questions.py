@@ -141,11 +141,32 @@
 # Returns
 # string: the resulting string
 
-def spilt_and_join(line) -> str:
-    x = line.split(" ")
-    x = '-'.join(x)
-    return x
-    print(x)
+# def spilt_and_join(line) -> str:
+#     x = line.split(" ")
+#     x = '-'.join(x)
+#     return x
+#     print(x)
 
 
-spilt_and_join('this is a string')
+# spilt_and_join('this is a string')
+
+
+# ****** QUESTION 8 *****
+
+# You are given a string and your task is to swap cases. In other words, convert all lowercase letters to uppercase letters and vice versa.
+
+# For Example:
+# Www.HackerRank.com → wWW.hACKERrANK.COM
+# Pythonist 2 → pYTHONIST 2
+
+
+# ****** SOLUTION 8 *****
+
+
+def swap_case(s):
+    return " ".join([i.lower() if i.isupper() else i.upper for i in s])
+
+
+s = input()
+result = swap_case(s)
+print(result)
