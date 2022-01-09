@@ -187,3 +187,21 @@ print(result)
 # Use no more than two lines. The first line (the for statement) is already written for you. You have to complete the print statement.
 
 # Note: Using anything related to strings will give a score of .
+
+
+def longest_substring(x) -> str:
+    longstr = 0
+    for i in range(len(x)):
+        exstr = ""
+        for j in range(i, len(x)):
+            if x[j] not in exstr:
+                exstr += x[j]
+                longstr = max(longstr, len(exstr))
+            else:
+                break
+    return longstr
+
+
+x = "bedee"
+
+print(longest_substring(x))
