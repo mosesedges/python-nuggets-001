@@ -172,7 +172,7 @@ result = swap_case(s)
 print(result)
 
 
-# ****** SOLUTION 9 *****
+# ****** QUESTION 9 *****
 
 # You are given a positive integer . Print a numerical triangle of height  like the one below:
 
@@ -186,7 +186,13 @@ print(result)
 
 # Use no more than two lines. The first line (the for statement) is already written for you. You have to complete the print statement.
 
-# Note: Using anything related to strings will give a score of .
+# Note: Using anything related to strings will give a score of 0.
+
+
+# ****** SOLUTION 9 *****
+
+for i in range(1, int(input())):
+    print((10 ** (i) // 9) * i)
 
 
 def longest_substring(x) -> str:

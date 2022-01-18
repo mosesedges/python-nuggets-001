@@ -3,7 +3,7 @@ Please write you name here: Moses Ejele
 """
 
 
-def process_shifts(path_to_csv) -> str:
+def process_shifts(path_to_csv):
     """
 
     :param path_to_csv: The path to the work_shift.csv
@@ -19,7 +19,13 @@ def process_shifts(path_to_csv) -> str:
     50 pounds
     :rtype dict:
     """
-    return
+    hour, minutes = (int(input()) for _ in range(2))
+    now = datetime(2022, 1, 14, hour, minutes)
+    time = now.strftime('%H:%M')
+    return {time: int(input())}
+
+
+print(process_shifts("path_to_csv"))
 
 
 def process_sales(path_to_csv):
@@ -41,7 +47,13 @@ def process_sales(path_to_csv):
 
     :rtype dict:
     """
-    return
+    hour, minutes = (int(input()) for _ in range(2))
+    now = datetime(2022, 1, 14, hour, minutes)
+    time = now.strftime('%H:%M')
+    return {time: float(input())}
+
+
+print(process_sales('path_to_csv'))
 
 
 def compute_percentage(shifts, sales):
@@ -61,7 +73,17 @@ def compute_percentage(shifts, sales):
     }
     :rtype: dict
     """
-    return
+    hour, minutes = (int(input()) for _ in range(2))
+    now = datetime(2022, 1, 14, hour, minutes)
+    percent_time = now.strftime('%H:%M')
+
+    shifts = shifts.get(time)
+    sales = sales.get(time)
+    percentage = shifts // sales * 100
+    if sales <= 0:
+        percentage == -sales
+
+    return {percent_time: float(percentage)}
 
 
 def best_and_worst_hour(percentages):
@@ -75,8 +97,9 @@ def best_and_worst_hour(percentages):
     e.g. ["18:00", "20:00"]
 
     """
-
-    return
+    sorted_keys = sorted(percentages, key=percentages.get)
+    hours_worked = sorted_keys.reverse()
+    return hours_worked
 
 
 def main(path_to_shifts, path_to_sales):
